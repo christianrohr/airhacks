@@ -1,3 +1,7 @@
+* {
+    --ff-base-colo:yellow;
+}
+
 my-cow{
     background: lightgreen;
     display: block;

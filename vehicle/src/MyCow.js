@@ -13,11 +13,12 @@ class MyCow extends HTMLElement {
         console.log('inside DOM');
         this.root.innerHTML = `
         <style>
-        @import url('style.css');
-        /*
-        h2{
-            color:red;
-        */
+        .chief{
+            font-size: 3em;
+            color: var(--ff-base-color,pink);
+        }
+        
+
         </style>
             <h2 class=${this.martin}>milk</h2>
             <button>${this.buttonCaption} ${this.getAttribute('cowname')}</button>

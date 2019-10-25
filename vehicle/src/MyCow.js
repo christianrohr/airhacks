@@ -3,16 +3,21 @@ class MyCow extends HTMLElement {
     constructor() { 
         super();
         console.log('initialized');
+        this.buttonCaption = "Click ME";
+        this.martin = "chief"
+        this.root = this.attachShadow({mode:"open"});
+
     }
 
     connectedCallback() { 
         console.log('inside DOM');
-        this.innerHTML = `
-            <h2>milk</h2>
-            <button>click</button>
+        this.root.innerHTML = `
+            <h2 class=${this.martin}>milk</h2>
+            <button>${this.buttonCaption} ${this.getAttribute('cowname')}</button>
         `;
-        this.button = this.querySelector("button");
+        this.button = this.root.querySelector("button");
         this.button.onclick = _ => this.buttonClicked();
+        console.dir(this);
     }
 
     buttonClicked() { 
@@ -21,7 +26,6 @@ class MyCow extends HTMLElement {
 
     disconnectedCallback() { 
         console.log('cleanup');
-
     }
 
 

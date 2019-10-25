@@ -2,3 +2,9 @@ my-cow{
     background: lightgreen;
     display: block;
 }
+
+.chief{
+    font-size: 3em;
+    color: blue;
+}
+

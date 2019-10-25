@@ -1,8 +1,11 @@
-const tractorArray = ['fendt', 'john', 'albert'];
+const loadModule = async _ => {
 
-const [first,...remaining] = tractorArray;
+    const module = await import('./Modules.js');
+    const tractor = new module.default();
+    console.log(tractor.message(),module.message,module.speed());
 
-console.log(first,remaining);
+
+}
 
 
-
+loadModule();

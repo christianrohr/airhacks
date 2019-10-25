@@ -9,7 +9,7 @@ class MyCow extends HTMLElement {
         this.buttonCaption = "Click ME";
         this.martin = "chief"
         this.root = this.attachShadow({mode:"open"});
-
+        this.buttonClicked = this.buttonClicked.bind(this);
     }
 
     connectedCallback() { 
@@ -25,7 +25,7 @@ class MyCow extends HTMLElement {
             <input name="martin" placeholder="bind me" value=${this.martin} @change=${e => this.martinChanged(e)}>
             <h2 class=${this.martin}>milk</h2>
             ${gps}
-            <button @click=${_ => this.buttonClicked()}>${this.buttonCaption} ${this.getAttribute('cowname')}</button>
+            <button @click=${this.buttonClicked}>${this.buttonCaption} ${this.getAttribute('cowname')}</button>
         `;
         render(template,this.root);
     }

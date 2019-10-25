@@ -1,6 +1,7 @@
 class Hugo { 
 
-    constructor() { 
+    constructor() {
+        this.messageState = "a field in js";
     }
 
     message() { 

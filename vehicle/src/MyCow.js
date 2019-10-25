@@ -2,9 +2,11 @@ class MyCow extends HTMLElement {
 
     constructor() { 
         super();
+        console.log('initialized');
     }
 
     connectedCallback() { 
+        console.log('inside DOM');
         this.innerHTML = `
             <h2>milk</h2>
             <button>click</button>

@@ -7,3 +7,7 @@ https://devdocs.io
 https://docs.emmet.io/cheat-sheet/
 https://developer.mozilla.org/en-US/docs/Web/API/NavigatorLanguage/language
 https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
+https://github.com/WebReflection/hyperHTML
+https://lit-html.polymer-project.org/guide
+http://tabulator.info
+https://datatables.net

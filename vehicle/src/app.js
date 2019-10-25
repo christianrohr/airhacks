@@ -1,5 +1,6 @@
 import './MyCow.js';
 
+/*
 customElements.whenDefined('my-cow').then(_ => {
     const element = document.querySelector('my-cow');
     window.setTimeout(_ => document.body.removeChild(element), 1000);
@@ -7,4 +8,5 @@ customElements.whenDefined('my-cow').then(_ => {
     
 }
 );
+*/
 

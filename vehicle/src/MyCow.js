@@ -1,3 +1,6 @@
+import  GpsDevice from  './GpsDevice.js';
+import { html, render } from './lit-html/lit-html.js';
+
 class MyCow extends HTMLElement { 
 
     constructor() { 
@@ -10,22 +13,21 @@ class MyCow extends HTMLElement {
     }
 
     connectedCallback() { 
-        console.log('inside DOM');
-        this.root.innerHTML = `
+        const gps = new GpsDevice();
+        gps.message = 'not happy';
+        const template = html`
         <style>
         .chief{
             font-size: 3em;
             color: var(--ff-base-color,pink);
         }
-        
-
         </style>
+            <input name="martin" placeholder="bind me" value=${this.martin} @change=${e => this.martinChanged(e)}>
             <h2 class=${this.martin}>milk</h2>
-            <button>${this.buttonCaption} ${this.getAttribute('cowname')}</button>
+            ${gps}
+            <button @click=${_ => this.buttonClicked()}>${this.buttonCaption} ${this.getAttribute('cowname')}</button>
         `;
-        this.button = this.root.querySelector("button");
-        this.button.onclick = _ => this.buttonClicked();
-        console.dir(this);
+        render(template,this.root);
     }
 
     buttonClicked() { 
@@ -34,6 +36,17 @@ class MyCow extends HTMLElement {
 
     disconnectedCallback() { 
         console.log('cleanup');
+    }
+
+    martinChanged(e) { 
+        const { name,value } = e.target;
+        console.log('changed', name, value);
+        
+        const model = {};
+
+        model[name] = value;
+        console.dir(model);
+        
     }
 
 

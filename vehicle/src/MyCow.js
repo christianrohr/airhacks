@@ -12,6 +12,13 @@ class MyCow extends HTMLElement {
     connectedCallback() { 
         console.log('inside DOM');
         this.root.innerHTML = `
+        <style>
+        @import url('style.css');
+        /*
+        h2{
+            color:red;
+        */
+        </style>
             <h2 class=${this.martin}>milk</h2>
             <button>${this.buttonCaption} ${this.getAttribute('cowname')}</button>
         `;

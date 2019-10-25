@@ -15,3 +15,4 @@ https://rollupjs.org/guide/en/
 https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content
 https://sap.github.io/ui5-webcomponents/playground/components/DatePicker/
 https://rollupjs.org/guide/en/#code-splitting
+https://caniuse.com/#search=postMessage

@@ -1,6 +1,17 @@
-const items = document.querySelectorAll('li');
-items.forEach(it => it.innerText = "new");
+console.log(navigator.language);
+const internationalize = (dom) => { 
+    const key = dom.innerText;
+    //fetch value from JSON / server
+    dom.innerText = 'german' + key;
+    return dom;
+
+}
+const items = document.querySelectorAll('li[ffint]');
+console.log(items);
+items.forEach(dom => internationalize(dom));
 
 
-const list = document.querySelector('ol');
-console.log(list);
+document.querySelector("#hack").innerText = 'found id';
+document.querySelector(".ff").innerText = 'found class';
+
+
